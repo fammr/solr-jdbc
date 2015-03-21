@@ -315,6 +315,16 @@ public class DatabaseMetaDataImpl implements DatabaseMetaData {
 	}
 
 	@Override
+	public ResultSet getPseudoColumns(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public boolean generatedKeyAlwaysReturned() throws SQLException {
+		return false;
+	}
+
+	@Override
 	public ResultSet getFunctions(String s, String s1, String s2)
 			throws SQLException {
 		throw DbException.get(ErrorCode.FEATURE_NOT_SUPPORTED, "getFunctions");

@@ -1,5 +1,6 @@
 package net.unit8.solr.jdbc.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.solr.client.solrj.response.FacetField;
@@ -40,4 +41,13 @@ public class FacetResultSetImpl extends AbstractResultSet {
 		}
 	}
 
+	@Override
+	public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+		return null;
+	}
+
+	@Override
+	public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+		return null;
+	}
 }

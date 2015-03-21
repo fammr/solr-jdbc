@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 
 import java.sql.*;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 
 /**
@@ -16,7 +17,8 @@ import java.util.Properties;
 public class SolrDriver implements Driver {
 	private String serverUrl;
     private static ConnectionTypeDetector connectionTypeDetector = ConnectionTypeDetector.getInstance();
-	
+	private final static Logger logger  = Logger.getLogger(SolrDriver.class.getName());
+
 	static {
 		Driver driver = new SolrDriver();
 		try {
@@ -30,6 +32,7 @@ public class SolrDriver implements Driver {
 			return false;
 		}
 		serverUrl = elm[2];
+		logger.info("serverUrl " +  serverUrl);
 		return true;
 	}
 	@Override
@@ -72,6 +75,11 @@ public class SolrDriver implements Driver {
 	@Override
 	public boolean jdbcCompliant() {
 		return false;
+	}
+
+	@Override
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		return logger;
 	}
 
 }

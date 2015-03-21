@@ -7,7 +7,8 @@ import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 
 import java.net.MalformedURLException;
-
+import java.sql.SQLException;
+import java.util.concurrent.Executor;
 
 
 public class CommonsHttpConnectionImpl extends SolrConnection {
@@ -27,6 +28,31 @@ public class CommonsHttpConnectionImpl extends SolrConnection {
     @Override
 	public void close() {
 		
+	}
+
+	@Override
+	public void setSchema(String schema) throws SQLException {
+
+	}
+
+	@Override
+	public String getSchema() throws SQLException {
+		return null;
+	}
+
+	@Override
+	public void abort(Executor executor) throws SQLException {
+
+	}
+
+	@Override
+	public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+
+	}
+
+	@Override
+	public int getNetworkTimeout() throws SQLException {
+		return 0;
 	}
 
 	@Override

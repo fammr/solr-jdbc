@@ -271,6 +271,16 @@ public class StatementImpl implements Statement {
 	}
 
 	@Override
+	public void closeOnCompletion() throws SQLException {
+
+	}
+
+	@Override
+	public boolean isCloseOnCompletion() throws SQLException {
+		return false;
+	}
+
+	@Override
 	public void setCursorName(String name) throws SQLException {
 		checkClosed();
 	}

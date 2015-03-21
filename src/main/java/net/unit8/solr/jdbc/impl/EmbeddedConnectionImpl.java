@@ -9,8 +9,9 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
+import java.sql.SQLException;
 import java.util.Properties;
-
+import java.util.concurrent.Executor;
 
 
 public class EmbeddedConnectionImpl extends SolrConnection {
@@ -56,7 +57,32 @@ public class EmbeddedConnectionImpl extends SolrConnection {
 		coreContainer.shutdown();
 	}
 
-	@Override
+    @Override
+    public void setSchema(String schema) throws SQLException {
+
+    }
+
+    @Override
+    public String getSchema() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public void abort(Executor executor) throws SQLException {
+
+    }
+
+    @Override
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+
+    }
+
+    @Override
+    public int getNetworkTimeout() throws SQLException {
+        return 0;
+    }
+
+    @Override
 	public int getQueryTimeout() {
 		return timeout;
 	}

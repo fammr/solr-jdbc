@@ -455,6 +455,20 @@ public abstract class AbstractResultSet implements ResultSet {
 	}
 
 	@Override
+	public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+		checkClosed();
+		checkAvailable();
+		throw DbException.get(ErrorCode.FEATURE_NOT_SUPPORTED);
+	}
+
+	@Override
+	public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+		checkClosed();
+		checkAvailable();
+		throw DbException.get(ErrorCode.FEATURE_NOT_SUPPORTED);
+	}
+
+	@Override
 	public Ref getRef(int i) throws SQLException {
 		checkClosed();
 		checkAvailable();
