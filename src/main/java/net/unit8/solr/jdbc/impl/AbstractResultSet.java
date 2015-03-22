@@ -1107,6 +1107,8 @@ public abstract class AbstractResultSet implements ResultSet {
 		throw DbException.get(ErrorCode.FEATURE_NOT_SUPPORTED);
 	}
 
+
+
 	@Override
 	public void updateRef(int i, Ref ref) throws SQLException {
 		throw DbException.get(ErrorCode.FEATURE_NOT_SUPPORTED);
